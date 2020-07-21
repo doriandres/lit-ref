@@ -85,36 +85,5 @@ customElements.define('component-b', ComponentB);
 
 ----------
 
-### Detecting reference changes
-
-There may be a reason to setup something when a reference changes, it can be done by handling the set of the property.
-
-```javascript
-import { LitElement, html } from 'lit-element';
-import { LitRef } from 'lit-ref';
-
-class ComponentA extends LitRef(LitElement){  
-  set componentB(newRef){
-    this._componentB = newRef; // Update the ref value
-    this._componentB.someProperty = this.someOtherProperty; // Update any properties...
-    this._componentB.addEventListener('someevent', this.somehandler); // Add any events...
-  }
-  
-  // Don't forget the getter
-  get componentB(){
-    return this._componentB;
-  }
-  
-  render(){
-    return html`
-      <component-b .ref=${this.refAs('componentB')}></component-b>
-    `;
-  }
-}
-customElements.define('component-a', ComponentA);
-```
-
-----------
-
 # Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
