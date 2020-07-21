@@ -1,0 +1,7 @@
+{
+  "name": "lit-ref",
+  "version": "1.0.0",
+  "description": "LitRef lets you enhance the way references are handled among custom elements",
+  "scripts": {},
+  "license": "MIT"
+}
